@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+echo "------------------- ENV ---------------------"
+
+env
+
+echo "------------------ ENVDIR -------------------"
+
+find $ENV_DIR -type f -exec printf "\n\n///////// {} /////////\n\n" \; -exec cat {} \;
